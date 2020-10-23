@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>TODO APP</h1>
+    <span class="info"> {{ remaining }}/{{ todos.length }}</span>
+    <form @submit.prevent="addItem">
+      <input type="text"
+             v-model="newItem">
+      <input type="submit" value="追加">
+    </form>
+
+    <ul  v-if="todos.length" >
+      <li v-for="(todo, index) in todos">
+        <span class="index">{{ index + 1 }}.</span>
+        <span class="title" :class="{done: todo.isDone}"> {{ todo.title }} </span>
+        <div class="todoinfo">
+          期限：<input type="date">
+          <input type="checkbox" v-model="todo.isDone"/>
+          <span v-if="todo.isDone !== true">未完了</span>
+          <span v-else>完了</span>
+          <span @click="deleteItem(index)" class="delete">[削除]</span>
+       </div>
+      </li>
+    </ul>
+
+    <ul v-else>
+      <li>Nothing</li>
+    </ul>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

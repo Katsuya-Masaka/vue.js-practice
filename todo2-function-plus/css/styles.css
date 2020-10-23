@@ -1,0 +1,44 @@
+#app{
+  margin: 0 auto;
+  width: 50%;
+}
+
+h1{
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  margin-bottom: 10px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+span{
+  cursor: pointer;
+}
+
+.done{
+  opacity: 0.2;
+}
+
+.delete{
+  color: red;
+  cursor: pointer;
+}
+
+.index,
+.title{
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom:1px dashed black;
+}
+
+.todoinfo{
+  text-align: right;
+}
+
+
