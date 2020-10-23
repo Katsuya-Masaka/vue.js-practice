@@ -1,0 +1,48 @@
+html{
+  background: #4682b4;
+  color: white;
+  font-weight: 600; 
+}
+
+#app{
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1{
+  border-bottom: 1px solid white;
+}
+
+.taskadd{
+  width: 200px;
+  height: 30px;
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.done { 
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+ul{
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li{
+  margin-bottom: 10px;
+}
+
+.listadd{
+  width: 200px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.delete{
+  height: 36px;
+  color: white;
+  background: red;
+  opacity: 0.8;
+}

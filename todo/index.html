@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>My Todo App</h1>
+
+      <ul>
+        <li v-for="(item, index) in items">
+          <label v-bind:class="{ done: item.isChecked }">
+            <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo" > 
+            {{ index + 1 }}  <input type="date">  {{ item.title }}
+            <select>
+              <option>未完了</option>
+              <option>進行中</option>
+              <option>完了</option>
+            </select>
+          </label>
+        </li>
+      </ul>
+
+
+        <input
+            class="listadd"
+            type="text"
+            placeholder="TODOを追加"
+            v-model="newItemTitle"
+            v-on:keyup.enter="addTodo(newItemTitle)">
+            <button>追加</button>
+
+      <button v-on:click="deleteTodo()" class="delete">一斉削除</button>
+    </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
+  
+</body>
+</html>
+
